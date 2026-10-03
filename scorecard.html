@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GHOST — Run Scorecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+<style>
+:root { --ink: #17130f; --paper: #ffffff; --line: #17130f; --lime: #b9f21f; --muted: #555; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.45 Oswald, Arial, sans-serif; }
+.page { max-width: 900px; margin: 0 auto; padding: 24px 16px 40px; }
+.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; border-bottom: 4px solid var(--ink); padding-bottom: 10px; }
+h1 { font: 400 64px/0.9 "Sedgwick Ave Display", cursive; margin: 0; }
+h1 small { display: block; font: 400 26px/1.2 Anton, sans-serif; letter-spacing: .02em; margin-top: 6px; }
+.name { font-size: 16px; min-width: 260px; }
+.name span { display: inline-block; border-bottom: 1px solid var(--ink); width: 200px; height: 1.2em; vertical-align: bottom; }
+.how { margin: 14px 0; font-size: 16px; }
+.how b { background: var(--lime); padding: 0 4px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 2px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+th { background: var(--ink); color: #fff; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; font-size: 13px; }
+td { height: 86px; }
+td.run { width: 30%; font-weight: 600; }
+td.ch { width: 8%; text-align: center; }
+td.dir { width: 18%; font-size: 14px; }
+.box { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--ink); vertical-align: -3px; margin-right: 4px; }
+.q { margin-top: 18px; border: 2px solid var(--ink); padding: 10px 12px; }
+.q p { margin: 0 0 6px; font-weight: 600; }
+.lines { height: 96px; background: repeating-linear-gradient(transparent 0 31px, #999 31px 32px); }
+.back { margin-bottom: 14px; }
+.back a { color: #1d3fd1; }
+.btn { font: 600 15px/1 Oswald, sans-serif; letter-spacing: .06em; text-transform: uppercase; background: #1d3fd1; color: #fff; border: 0; padding: 10px 14px; cursor: pointer; }
+@media print { .back { display: none; } .page { padding: 0; } td { height: 92px; } }
+@media (max-width: 600px) { h1 { font-size: 48px; } td { height: auto; min-height: 60px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="back"><a href="index.html">← Teacher guide</a> &nbsp; <button class="btn" onclick="window.print()">Print</button></p>
+  <div class="top">
+    <h1>GHOST<small>Run Scorecard</small></h1>
+    <div class="name">Name <span></span><br>Period <span style="width:80px"></span></div>
+  </div>
+  <p class="how">Every time Ghost runs, decide: is he running <b>away</b> from something, or running <b>toward</b> something? Write what he's feeling as proof.</p>
+  <table>
+    <thead><tr><th>The run</th><th>Ch.</th><th>Away or toward?</th><th>Evidence: what is he feeling?</th></tr></thead>
+    <tbody>
+      <tr><td class="run">The night with his father</td><td class="ch">1</td><td class="dir"><span class="box"></span>Away<br><span class="box"></span>Toward</td><td></td></tr>
+      <tr><td class="run">The race against Lu</td><td class="ch">2</td><td class="dir"><span class="box"></span>Away<br><span class="box"></span>Toward</td><td></td></tr>
+      <tr><td class="run">Punishment sprints</td><td class="ch">4</td><td class="dir"><span class="box"></span>Away<br><span class="box"></span>Toward</td><td></td></tr>
+      <tr><td class="run">Skipping school</td><td class="ch">5</td><td class="dir"><span class="box"></span>Away<br><span class="box"></span>Toward</td><td></td></tr>
+      <tr><td class="run">The long run</td><td class="ch">6</td><td class="dir"><span class="box"></span>Away<br><span class="box"></span>Toward</td><td></td></tr>
+      <tr><td class="run">The 100 meters at the meet</td><td class="ch">10</td><td class="dir"><span class="box"></span>Away<br><span class="box"></span>Toward</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="q">
+    <p>When does Ghost switch from running away to running toward? What changed him?</p>
+    <div class="lines"></div>
+  </div>
+</div>
+</body>
+</html>

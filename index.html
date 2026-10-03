@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GHOST — Teacher Guide to the Film Companion</title>
+<meta name="description" content="Teacher guide for GHOST, a 29-minute animated companion to Jason Reynolds' novel Ghost: chapter map, five discussion breaks, themes, activities, vocabulary and content notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;600&family=Sedgwick+Ave+Display&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #17130f; --paper: #fbf7ee; --card: #ffffff; --muted: #5d5850; --line: #e3dccd;
+  --orange: #ff6a1a; --blue: #1d3fd1; --magenta: #e5207a; --lime: #b9f21f; --gold: #f2c230;
+  --tag-ink: #17130f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --ink: #f3eee4; --paper: #15120f; --card: #1f1b17; --muted: #b3ab9d; --line: #3a332b; }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.6 "Source Serif 4", Georgia, serif; }
+a { color: var(--blue); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) a { color: #8fa6ff; } }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* hero */
+.hero { position: relative; color: #fff; background: #111 url(img/hero.jpg) center 40%/cover no-repeat; min-height: 62vh; display: flex; align-items: flex-end; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05) 30%, rgba(0,0,0,.82)); }
+.hero .wrap { position: relative; z-index: 1; padding-bottom: 36px; width: 100%; }
+.kicker { display: inline-block; font: 600 14px/1 Oswald, sans-serif; letter-spacing: .12em; text-transform: uppercase; background: var(--lime); color: var(--tag-ink); padding: 7px 10px; transform: rotate(-1.5deg); }
+.hero h1 { font: 400 clamp(56px, 11vw, 132px)/0.95 "Sedgwick Ave Display", cursive; margin: 12px 0 6px; text-shadow: 0 0 18px rgba(255,106,26,.6); }
+.hero p.sub { font: 400 clamp(17px, 2.3vw, 22px)/1.4 Oswald, sans-serif; max-width: 720px; margin: 0; }
+
+/* nav */
+nav.toc { position: sticky; top: 0; z-index: 5; background: var(--ink); }
+nav.toc .wrap { display: flex; gap: 4px 18px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px; }
+nav.toc a { color: var(--paper); text-decoration: none; font: 600 14px/1.4 Oswald, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+nav.toc a:hover { color: var(--lime); }
+
+section { padding: 44px 0 8px; }
+h2 { font: 400 clamp(32px, 5vw, 46px)/1.05 Anton, Impact, sans-serif; letter-spacing: .01em; text-transform: uppercase; margin: 0 0 14px; }
+h2 .tag { display: inline-block; background: var(--orange); color: var(--tag-ink); padding: 2px 10px 0; transform: rotate(-1deg); }
+h3 { font: 600 22px/1.25 Oswald, sans-serif; margin: 26px 0 6px; }
+.lead { font-size: 21px; max-width: 780px; }
+ul { padding-left: 1.2em; } li { margin: 4px 0; }
+
+/* facts strip */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; margin: 18px 0 6px; }
+.fact { background: var(--card); border: 1px solid var(--line); padding: 12px 14px; }
+.fact b { display: block; font: 400 30px/1.1 Anton, sans-serif; color: var(--magenta); }
+.fact span { font: 400 15px/1.3 Oswald, sans-serif; color: var(--muted); }
+
+/* chapter cards */
+.chapters { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.ch { background: var(--card); border: 1px solid var(--line); display: flex; flex-direction: column; }
+.ch img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+.ch .body { padding: 12px 14px 14px; }
+.ch .time { font: 600 13px/1 Oswald, sans-serif; letter-spacing: .08em; background: var(--ink); color: var(--paper); padding: 5px 8px; display: inline-block; }
+.ch.tb .time { background: var(--lime); color: var(--tag-ink); }
+.ch h4 { font: 600 19px/1.25 Oswald, sans-serif; margin: 8px 0 4px; }
+.ch p { margin: 0; font-size: 16px; line-height: 1.5; }
+
+/* track breaks */
+.tbreak { background: var(--card); border: 1px solid var(--line); border-left: 8px solid var(--lime); padding: 6px 20px 14px; margin: 16px 0; }
+.tbreak .q { font: 400 22px/1.4 "Source Serif 4", serif; font-style: italic; background: var(--ink); color: var(--paper); padding: 14px 16px; margin: 10px 0 8px; }
+.tbreak .q::before { content: "PAUSE & DISCUSS"; display: block; font: 600 12px/1 Oswald, sans-serif; font-style: normal; letter-spacing: .14em; color: var(--lime); margin-bottom: 8px; }
+
+/* tables */
+.tbl { overflow-x: auto; margin: 12px 0; }
+table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 16px; line-height: 1.45; }
+th, td { border: 1px solid var(--line); padding: 9px 11px; text-align: left; vertical-align: top; }
+th { font: 600 14px/1.3 Oswald, sans-serif; letter-spacing: .05em; text-transform: uppercase; background: var(--ink); color: var(--paper); }
+td:first-child { font-weight: 600; }
+
+.callout { background: #fff4e8; border: 2px solid var(--orange); padding: 14px 18px; margin: 14px 0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .callout { background: #2a1d12; } }
+.btn { display: inline-block; font: 600 16px/1 Oswald, sans-serif; letter-spacing: .06em; text-transform: uppercase; background: var(--blue); color: #fff !important; text-decoration: none; padding: 12px 16px; margin: 6px 8px 6px 0; }
+.btn.alt { background: var(--magenta); }
+footer { margin-top: 48px; padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+
+@media (max-width: 600px) { body { font-size: 17px; } .lead { font-size: 19px; } section { padding-top: 32px; } }
+@media print {
+  nav.toc, .hero, .btn, .noprint { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  .ch img { display: none; }
+  .chapters { grid-template-columns: 1fr 1fr; }
+  section { padding-top: 14pt; break-inside: auto; }
+  .tbreak, .ch { break-inside: avoid; }
+  .tbreak .q { background: #eee; color: #000; }
+  th { background: #ddd; color: #000; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Teacher Guide · Grade 8</span>
+    <h1>GHOST</h1>
+    <p class="sub">A 29-minute animated companion to Jason Reynolds' novel <em>Ghost</em>, with a chapter map, five discussion breaks, activities and content notes.</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <div class="wrap">
+    <a href="#about">About</a><a href="#map">Chapter map</a><a href="#breaks">Track Breaks</a><a href="#themes">Themes</a><a href="#activities">Activities</a><a href="#vocab">Vocabulary</a><a href="#content">Content notes</a><a href="#differences">Book vs. film</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="about">
+  <h2><span class="tag">About the film</span></h2>
+  <p class="lead"><em>GHOST</em> retells all ten chapters of the novel in Castle "Ghost" Cranshaw's own voice, in a street-art collage style. It pauses five times for short <strong>Track Breaks</strong> that each end on a discussion question.</p>
+  <div class="facts">
+    <div class="fact"><b>29:28</b><span>running time</span></div>
+    <div class="fact"><b>10 + 5</b><span>chapters + Track Breaks</span></div>
+    <div class="fact"><b>17</b><span>chapter markers in the video</span></div>
+    <div class="fact"><b>CC</b><span>captions on screen throughout</span></div>
+  </div>
+  <ul>
+    <li><strong>Use it after reading, or chapter by chapter.</strong> Each film chapter matches a book chapter and opens with its title card, so you can stop at any card.</li>
+    <li><strong>Pause at every "Pause &amp; Discuss" card.</strong> The question stays on screen for a few seconds; pause there for discussion.</li>
+    <li><strong>Captions are on screen the whole time.</strong> Words light up as they're spoken, which supports struggling readers and English learners.</li>
+    <li><strong>It's a retelling, not a reading.</strong> The book is under copyright, so the dialogue and narration are new wording that follows the book's events. Only one line is quoted directly: "I got a lot of scream inside" (Chapter 3). The film is no substitute for the novel. Use it to review, discuss and spark interest.</li>
+    <li><strong>Facts were checked against the novel and two published teaching guides</strong> (the Simon &amp; Schuster reading group guide and the Words Alive curriculum). Where sources disagreed, the novel won.</li>
+  </ul>
+  <p class="noprint"><a class="btn" href="scorecard.html">Printable student scorecard</a><a class="btn alt" href="javascript:window.print()">Print this guide</a></p>
+</section>
+
+<section id="map">
+  <h2><span class="tag">Chapter map</span></h2>
+  <p>Each film chapter covers the matching book chapter. Times are from the start of the video and match its chapter markers.</p>
+  <div class="chapters">
+    <article class="ch"><img src="img/open.jpg" alt="Runners crouched at the start line" loading="lazy"><div class="body"><span class="time">0:00</span><h4>Cold open</h4><p>The starting line at the first meet. Ghost freezes the moment: before this gun goes off, you need to know about the other one.</p></div></article>
+    <article class="ch"><img src="img/ch1.jpg" alt="Ghost at Mr. Charles's store counter" loading="lazy"><div class="body"><span class="time">0:19</span><h4>Ch. 1 · World Records</h4><p>Guinness records, Mr. Charles's store and the sunflower-seed ritual, Ghost's father. The night three years ago: the gunshot, running to Mr. Charles's, the stockroom, the 10-year sentence.</p></div></article>
+    <article class="ch"><img src="img/ch2.jpg" alt="Ghost racing Lu on the track" loading="lazy"><div class="body"><span class="time">3:48</span><h4>Ch. 2 · Fastest Tryout Ever</h4><p>Ghost races Lu in jeans and high-tops, too close to call. Coach, the cab, Ma, and the deal: one mess-up at school and he's off the team.</p></div></article>
+    <article class="ch tb"><img src="img/tb1.jpg" alt="Ghost and his mother running down a night street" loading="lazy"><div class="body"><span class="time">7:10 · Track Break 1</span><h4>Running Away vs. Toward</h4><p>The book's central question. See Track Breaks below.</p></div></article>
+    <article class="ch"><img src="img/ch3.jpg" alt="Coach and Ghost on a bench at sunset" loading="lazy"><div class="body"><span class="time">8:04</span><h4>Ch. 3 · Most Altercations</h4><p>17 hours and 2 minutes without a fight. Brandon, the cafeteria, the fake-uncle phone call. On the bench: "I got a lot of scream inside."</p></div></article>
+    <article class="ch"><img src="img/ch4.jpg" alt="Ghost falling as his shoes fly off" loading="lazy"><div class="body"><span class="time">10:35</span><h4>Ch. 4 · Worst Day Ever</h4><p>Punishment sprints (12.5, then 14 seconds), ladders, the untied lace, both shoes flying. Patty tells him Lu used to be called "Ghost." He cuts his high-tops down.</p></div></article>
+    <article class="ch tb"><img src="img/tb2.jpg" alt="Three pairs of shoes" loading="lazy"><div class="body"><span class="time">12:31 · Track Break 2</span><h4>Seeds &amp; Shoes</h4><p>Symbols.</p></div></article>
+    <article class="ch"><img src="img/ch5.jpg" alt="Ghost in the sporting goods store" loading="lazy"><div class="body"><span class="time">13:20</span><h4>Ch. 5 · Most Runaways in a Single Day</h4><p>Shamika laughs, Ghost skips school, steals the silver shoes from Everything Sports, then gets stuck in Mr. Charles's stockroom.</p></div></article>
+    <article class="ch"><img src="img/ch6.jpg" alt="Coach's taxi following Ghost on the long run" loading="lazy"><div class="body"><span class="time">16:04</span><h4>Ch. 6 · Longest Run</h4><p>The silver shoes, the long run, Coach's cab with the megaphone. Last place, but he doesn't quit. The lie to Coach.</p></div></article>
+    <article class="ch tb"><img src="img/tb3.jpg" alt="Coach and Ghost side by side" loading="lazy"><div class="body"><span class="time">17:19 · Track Break 3</span><h4>Who's Got Ghost's Back?</h4><p>Mentors.</p></div></article>
+    <article class="ch"><img src="img/ch7.jpg" alt="The newbies crammed into Coach's cab" loading="lazy"><div class="body"><span class="time">18:08</span><h4>Ch. 7 · Best Friday Ever</h4><p>Shamika apologizes, Ghost lets Brandon be, the cab ride to the newbie dinner.</p></div></article>
+    <article class="ch"><img src="img/ch8.jpg" alt="The team at the Chinese restaurant" loading="lazy"><div class="body"><span class="time">19:10</span><h4>Ch. 8 · Best Secret</h4><p>Coach takes the utensils. Lu, Sunny, Patty and Ghost share secrets. Coach won Olympic gold.</p></div></article>
+    <article class="ch"><img src="img/ch9.jpg" alt="Coach showing his medal tattoo" loading="lazy"><div class="body"><span class="time">20:55</span><h4>Ch. 9 · Dirtiest Car</h4><p>Ghost defends Sunny. The SHOPLIFTER poster, the bench, Coach's story about his father. Run toward who you want to be. Cleaning the cab, apologizing to Tia, Coach pays.</p></div></article>
+    <article class="ch tb"><img src="img/tb4.jpg" alt="Coach paying at the store counter" loading="lazy"><div class="body"><span class="time">24:46 · Track Break 4</span><h4>Two Men, One Block</h4><p>Coach as mirror; fairness.</p></div></article>
+    <article class="ch"><img src="img/ch10.jpg" alt="Ghost in the starting blocks" loading="lazy"><div class="body"><span class="time">25:27</span><h4>Ch. 10 · Race Day</h4><p>His own bedroom, Ma calls him "Ghost," power pills from Mr. Charles, Brandon in lane 8, Lu: "me and you." On your mark, get set, BOOM.</p></div></article>
+    <article class="ch tb"><img src="img/tb5.jpg" alt="Four runners at the start line facing the sunrise" loading="lazy"><div class="body"><span class="time">28:11 · Track Break 5</span><h4>So Who Wins?</h4><p>The open ending and the Track series. Credits follow at 29:04.</p></div></article>
+  </div>
+</section>
+
+<section id="breaks">
+  <h2><span class="tag">The five Track Breaks</span></h2>
+  <p>Each Track Break is under a minute and ends on a "Pause &amp; Discuss" card. Pause the video when the card appears.</p>
+
+  <div class="tbreak">
+    <h3>Track Break 1 · Running Away vs. Running Toward <small>(7:10, question at 7:51)</small></h3>
+    <div class="q">Ghost says he never had to practice running. He just knew how. What does it mean that his greatest talent was born on his worst night?</div>
+    <ul>
+      <li>The book's cover asks whether Ghost is running for his life or from it. Every run in the book can be sorted on that line.</li>
+      <li>Reynolds has said he chose track because "running" means many things: running away from something, toward something.</li>
+      <li>Have students keep the <a href="scorecard.html">running-away / running-toward scorecard</a> for the rest of the film.</li>
+    </ul>
+  </div>
+
+  <div class="tbreak">
+    <h3>Track Break 2 · Seeds &amp; Shoes <small>(12:31, question at 13:12)</small></h3>
+    <div class="q">Why does Ghost cut up his own shoes, instead of asking for help?</div>
+    <ul>
+      <li>Sunflower seeds: his father ate them shell and all; Ghost cracks them one at a time and keeps the good part.</li>
+      <li>Reynolds has explained the seeds as the adults in a kid's life: some chew you up, some only take the salt, some take time to crack the shell. Students sort the book's adults into those groups.</li>
+      <li>Shoes as identity: no-name high-tops, cut-down low-tops, the stolen silver shoes, then the same silver shoes paid for. Each pair is a different version of Ghost.</li>
+    </ul>
+  </div>
+
+  <div class="tbreak">
+    <h3>Track Break 3 · Who's Got Ghost's Back? <small>(17:19, question at 18:00)</small></h3>
+    <div class="q">Who is the adult in your corner? And what did they do that made you trust them?</div>
+    <ul>
+      <li>Mr. Charles (shelter, the record book, "world's greatest"), Coach (rides home, homework checks, won't let him quit), Ma (work, nursing classes, his favorite dinner), Principal Marshall (could have suspended him and didn't).</li>
+      <li>Ghost's father is gone, but Ghost isn't alone.</li>
+      <li>Personal question: invite answers in writing first. Not every student will want to share aloud.</li>
+    </ul>
+  </div>
+
+  <div class="tbreak">
+    <h3>Track Break 4 · Two Men, One Block <small>(24:46, question at 25:19)</small></h3>
+    <div class="q">Was Coach's punishment fair? What would you have done if you were Coach?</div>
+    <ul>
+      <li>Coach mirrors Ghost: same neighborhood, fathers who hurt them, both runners.</li>
+      <li>The consequences: no uniform, sitting out, old shoes, cleaning the cab, apologizing to Tia face to face. Coach doesn't call the police and doesn't tell Ma.</li>
+      <li>Then Coach pays. Debate: is that a reward, or a debt Ghost now has to live up to?</li>
+    </ul>
+  </div>
+
+  <div class="tbreak">
+    <h3>Track Break 5 · So Who Wins? <small>(28:11, final question at 28:52)</small></h3>
+    <div class="q">You can't run away from who you are. So what are you running toward?</div>
+    <ul>
+      <li>The book ends as the gun fires. We never learn who wins.</li>
+      <li>The film frames it as two gunshots: one that made Ghost run away, one that tells him to run toward something. (That pairing is a common classroom reading, not a statement from the author.)</li>
+      <li>Writing extension: an alternate ending, or the first page of <em>Patina</em> from Patty's point of view.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="themes">
+  <h2><span class="tag">Themes, symbols &amp; craft</span></h2>
+  <p>The central theme is running away versus running toward. Coach states it in Chapter 9: you can't run away from who you are, but you can run toward who you want to be.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Idea</th><th>Where it shows up in the film (chapter)</th><th>Ask students</th></tr></thead>
+    <tbody>
+      <tr><td>Running away vs. toward</td><td>The night with his father (1), the race with Lu (2), skipping school (5), the starting gun (10)</td><td>Which runs are away, which are toward, and when does it switch?</td></tr>
+      <tr><td>Fear and "scream inside"</td><td>The quote card (3), the stockroom panic (5), dressing in his old bedroom (10)</td><td>How does Ghost's fear change from Chapter 1 to Chapter 10?</td></tr>
+      <tr><td>Fathers and father figures</td><td>Ghost's father and the seeds (1); Coach's father, the medal and the photo (9)</td><td>Why does Coach still keep his father's photo?</td></tr>
+      <tr><td>Identity and naming</td><td>Castle vs. "Ghost" (2), Lu once called "Ghost" (4), Ma calls him Ghost for the first time (10)</td><td>Which name fits him by the end?</td></tr>
+      <tr><td>Honesty and consequences</td><td>The theft (5), the lie to Coach (6), the poster, the apology, Coach paying (9)</td><td>What did Ghost learn that the police never could have taught him?</td></tr>
+      <tr><td>Belonging</td><td>"For the first time... on a team" (2), the secrets dinner (8), "We are a team" (9)</td><td>What makes a group of people a team?</td></tr>
+      <tr><td>Sunflower seeds</td><td>The ritual with Mr. Charles, Dad's seeds (1), "power pills" on race day (10)</td><td>What do the seeds mean at the start vs. the end?</td></tr>
+      <tr><td>Shoes</td><td>High-tops, cut-downs, silver bullets, paid-for silver bullets (2–10)</td><td>What does each pair say about Ghost?</td></tr>
+      <tr><td>World records</td><td>Chapter titles as "world records," the record book, "one of the world's greatest"</td><td>Why does Reynolds title chapters this way?</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Craft</h3>
+  <ul>
+    <li><strong>First-person voice:</strong> Ghost tells his own story with humor, slang and asides, and it still hits hard. Notice how jokes sit right next to painful moments.</li>
+    <li><strong>Open ending:</strong> the book stops on the gun. Discuss why an author would leave out the result.</li>
+  </ul>
+</section>
+
+<section id="activities">
+  <h2><span class="tag">Activities</span></h2>
+  <p>One viewing (30 minutes) plus a 40–50 minute discussion fits two class periods. These activities fit around it.</p>
+  <h3>Before viewing</h3>
+  <ul>
+    <li>Quick-write (5 min): "What's something you've run away from? Something you've run toward?" Students keep it private.</li>
+    <li>Hand out the <a href="scorecard.html">run scorecard</a>.</li>
+  </ul>
+  <h3>During viewing: the run scorecard</h3>
+  <p>Students mark each run as <em>away</em> or <em>toward</em> and note what Ghost is feeling. <a href="scorecard.html">Open the printable version.</a></p>
+  <h3>After viewing</h3>
+  <ul>
+    <li><strong>Seed sort:</strong> list the adults in the book. Who "chews you up," who "only takes the salt," who "cracks the shell"? Defend each placement with a scene.</li>
+    <li><strong>Fair or not?</strong> Four corners on Coach's punishment (strongly agree to strongly disagree), then a one-paragraph argument.</li>
+    <li><strong>Write the next 30 seconds:</strong> the book ends on the gun. Students write the race, or write it from Lu's, Ma's or Brandon's point of view.</li>
+    <li><strong>Book vs. film:</strong> name two moments the film shortened or left out (see <a href="#differences">Book vs. film</a>) and explain what's lost.</li>
+    <li><strong>My world record:</strong> echoing the chapter titles, students title a chapter of their own life "World Record for..."</li>
+  </ul>
+</section>
+
+<section id="vocab">
+  <h2><span class="tag">Vocabulary</span></h2>
+  <p>From published chapter vocabulary lists for the novel (<a href="https://www.vocabulary.com/lists/2145567">Ch. 1–3</a>, <a href="https://www.vocabulary.com/lists/2145597">Ch. 4–6</a>, <a href="https://www.vocabulary.com/lists/2145614">Ch. 7–10</a>), plus track terms the film uses.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Group</th><th>Words</th></tr></thead>
+    <tbody>
+      <tr><td>Ch. 1–3</td><td>altercation, pallet, suspension, disciplined, stance, jeer, arrogant, cocky, unfazed, exemplary</td></tr>
+      <tr><td>Ch. 4–6</td><td>consequence, adrenaline, procrastinate, stethoscope, phlebotomy, paranoid, loiter, megaphone, reflex, coincidence</td></tr>
+      <tr><td>Ch. 7–10</td><td>technically, karma, dominate, fugitive, motivated</td></tr>
+      <tr><td>Track</td><td>sprint, starting blocks, "on your mark / get set," ladders, long run, fartlek, lane, heat, PR (personal record)</td></tr>
+      <tr><td>Literary</td><td>symbol, motif, theme, first-person narrator, characterization, foil, mentor, open (cliffhanger) ending</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="content">
+  <h2><span class="tag">Sensitive content</span></h2>
+  <div class="callout">The book opens with a father shooting at his wife and son. Preview Chapter 1 (0:19–3:48) before showing it, give students a heads-up, and offer an alternative for anyone affected by gun or domestic violence.</div>
+  <div class="tbl"><table>
+    <thead><tr><th>Content</th><th>How the film handles it</th></tr></thead>
+    <tbody>
+      <tr><td>Gun / domestic violence (Ch. 1, 10)</td><td>Told in narration with silhouettes: the father is a faceless shadow, the gunshot is a white flash and a muffled sound. No blood, no one hurt on screen. The starter's pistol at the end is shown as a starter's pistol.</td></tr>
+      <tr><td>Alcohol and drug addiction</td><td>Ghost's father's drinking is stated in one line. Coach's father's addiction, the medal sold for drugs and his death are told by Coach, not shown. The drug dealer at the basketball court (Ch. 7) is left out.</td></tr>
+      <tr><td>Bullying and fighting (Ch. 3)</td><td>Brandon's insults are kept. The fight is a stylized burst of milk, a tray and motion lines, with no injuries.</td></tr>
+      <tr><td>Theft and lying (Ch. 5–9)</td><td>Shown plainly, with the book's full consequences.</td></tr>
+      <tr><td>Poverty, albinism, disability</td><td>Kept as in the book. Lu's albinism and Patty's mother's amputations are named respectfully.</td></tr>
+      <tr><td>Ma's movie (Ch. 6)</td><td>The R-rated film Ma watches isn't named.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Tips from the published guides</h3>
+  <ul>
+    <li>Make personal sharing optional. Let students write about a character instead of themselves.</li>
+    <li>Tell the counselor before you teach Chapter 1.</li>
+    <li>Don't treat Glass Manor as a bad place: it's also where Coach and Mr. Charles come from.</li>
+    <li>Treat the blunt way Ghost first describes Lu as a flaw to examine, not a model.</li>
+  </ul>
+</section>
+
+<section id="differences">
+  <h2><span class="tag">Book vs. film</span></h2>
+  <p>The film keeps every major event in order but compresses about 180 pages into 30 minutes. All dialogue is reworded. Moments it shortens or leaves out make good "what did the film miss?" prompts:</p>
+  <ul>
+    <li><strong>Ch. 2:</strong> Coach's promise that track will have Ghost dunking by next year.</li>
+    <li><strong>Ch. 3:</strong> the names of Ghost's friends (Dre and Red) and the gym teacher "Big Perm."</li>
+    <li><strong>Ch. 4:</strong> Aaron sharing his water bottle, and Ghost running shirtless with his jeans rolled.</li>
+    <li><strong>Ch. 5:</strong> Mr. Charles's family of "geniuses" (doctor brother, professor sister, lawyer parents), only touched on.</li>
+    <li><strong>Ch. 6:</strong> the flashback of the dog chasing Ghost home from the court.</li>
+    <li><strong>Ch. 7:</strong> the weekend with Aunt Sophie and King, and the afternoon at the basketball court.</li>
+    <li><strong>Ch. 9:</strong> fartlek training and the weekly practice schedule. Curron's exact words are new; the book says only that he mocked Sunny's mother.</li>
+    <li><strong>Ch. 10:</strong> the relay and hurdles races before the 100, and Coach giving Ghost his uniform the night before.</li>
+  </ul>
+  <p>Facts the film keeps exactly: Coach's medal is <strong>gold</strong>; Ghost's sprint times are <strong>12.5</strong> then <strong>14</strong> seconds; the shoes are <strong>size 9</strong>, from <strong>Everything Sports</strong>; Ghost runs in <strong>lane 6</strong>, Lu in lane 1, Brandon in <strong>lane 8</strong> for the Bolts. The book never names Coach's Olympic event, and neither does the film.</p>
+  <h3>Sources</h3>
+  <ul>
+    <li>Jason Reynolds, <em>Ghost</em> (Atheneum Books for Young Readers, 2016)</li>
+    <li><a href="https://media.btsb.com/TitleLessonPlans/3156.pdf">Simon &amp; Schuster reading group guide</a></li>
+    <li><a href="https://static1.squarespace.com/static/56663dee841abafca76d6f46/t/608055b5eab7b4198179e9a8/1619023285857/Teacher+Guide_Ghost.pdf">Words Alive teacher guide to <em>Ghost</em></a></li>
+    <li><a href="https://www.nationalbook.org/books/ghost/">National Book Foundation: <em>Ghost</em>, 2016 finalist</a></li>
+    <li><a href="https://www.kirkusreviews.com/news-and-features/articles/jason-reynolds/">Kirkus interview with Jason Reynolds (2016)</a></li>
+    <li><a href="https://lsintspl3.wgbh.org/en-us/lesson/symbolism_ghost/8">PBS LearningMedia: symbolism in <em>Ghost</em></a></li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><em>GHOST</em> the film is an unofficial classroom companion, an original retelling made for students who are reading the novel. It is not affiliated with Jason Reynolds or Simon &amp; Schuster. Illustrations are from the film and were made with AI tools. Read the book: it's better.</p>
+  </div>
+</footer>
+</body>
+</html>
